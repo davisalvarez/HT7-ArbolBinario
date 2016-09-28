@@ -1,26 +1,28 @@
+package org.uvg.utilidades;
+
+import org.uvg.bean.Diccionario;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
-
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Marlon
- */
+*
+* @author Marlon
+*/
+
 public class Utilidades {
-    static ArrayList<String[]> lectorArray;
+	
+	private static Utilidades instancia;
+    private ArrayList<Diccionario> lectorArray;
+    
+    public static Utilidades getInstancia(){
+		if(instancia==null)
+			instancia=new Utilidades();
+		return instancia;
+	}
+    
     public void lector(){
        BufferedReader br = null;
        try{
@@ -34,6 +36,7 @@ public class Utilidades {
            e.printStackTrace();
        }
     }
+   
     public void lectorC(){
         BufferedReader Br = null;
         try{
